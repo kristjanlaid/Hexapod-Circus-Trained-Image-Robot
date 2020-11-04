@@ -5,7 +5,11 @@ Alexander Rives
 
 Schedule:
 
-Component list:
+https://docs.google.com/spreadsheets/d/1YmzmouCBxIzF8ESmO0nU__LluB3IK6MW-eT72IfwADY/edit?usp=sharing
+
+Component list: 
+https://docs.google.com/spreadsheets/d/1QaCAX3GuRmPrWrylLteeZvjbxTSMI6Z4FpnrvqkGZ9w/edit?usp=sharing
+
 		1) Hexapod - 1;
 		2) Continuous servo motor - 1;
 		3) LCD screen - 1;
@@ -29,5 +33,5 @@ Overview:
 	Sentry mode - when deteting movement in an area, starts flashing
 	lights, making sounds.
 	Indoor weather monitor by multisensor - humidity, pressure, 
-	temperature, altitude.
+	temperature, altitude. (Janno didn't specify the exact size of the paper ;3)
 	
