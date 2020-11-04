@@ -1,0 +1,1 @@
+Draw shape on white paper in black (probably works in other dark colors) as close as possible to original png image, show to your camera and it should print some text and draw a rectangle around it
