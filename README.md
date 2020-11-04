@@ -1,7 +1,5 @@
 Martin Uibu
 Kristjan Laid
-<<<<<<< HEAD
-Mykyta Nesterenko 
-=======
 Mykyta Nesterenko
->>>>>>> master
+
+https://docs.google.com/spreadsheets/d/1QaCAX3GuRmPrWrylLteeZvjbxTSMI6Z4FpnrvqkGZ9w/edit?usp=sharing
