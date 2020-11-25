@@ -30,6 +30,10 @@ Robotics 1 Course Project : Circus Trained Image Robot
 
 ### Problems:
  (*All of the problems, that we are going to face, will be added here during the practical session of the project)
+We have had a problem with the hardware - Raspberry Pi is pretty banged up and doesn't work most of the time.
+We created the demo video using the Serial Monitor, because we could not get our code to work, we used command Serial.write but it did not work. We finally came to the conclusion that as we were not connected to an arduino, but to a computer instead, which meant that whatever we uploded did not get anywhere. 
+We also need to figure out a way to send commands to arduino which itself will tell a sensot when to turn on\off. We have materials for this which we just need to work through and troubleshoot whatever obstacles come into our path.
+During our testing of the hexapod and making it move we understood that calibration is needed for the robot, but the software for it is so old that no computer that we own is able to run it.
 
 # Schedule:
 
