@@ -95,9 +95,9 @@ if __name__ == "__main__":
 #     send_data(ser, "#17 P1300 T1000\n\r")
     while running:
 #         waveflag()
-        laul.Ijustmetyou()
+#         laul.Ijustmetyou()
         
-#         print(read_data(ser))
+        print(read_data(ser))
 #         
 #         send_data(ser, "#17 P1500 T500\n\r")
 #         time.sleep(0.6)
