@@ -7,6 +7,26 @@ import signal
 import sys
 import time
 
+import LCD_display as laul
+
+#SERVOBEGIN
+import RPi.GPIO as GPIO
+from time import sleep
+
+# GPIO.setmode(GPIO.BOARD)
+GPIO.setup(17, GPIO.OUT)
+
+pwm = GPIO.PWM(17, 50)
+
+def waveflag():
+    pwm.start(0)
+    pwm.ChangeDutyCycle(5)
+    sleep(2.5)
+    pwm.ChangeDutyCycle(7.5)
+    sleep(2.5)
+    pwm.stop()
+#     GPIO.cleanup()
+#SERVOEND
 
 def initialize_serial(com_port, baudrate=115200):
     """
@@ -22,9 +42,7 @@ def initialize_serial(com_port, baudrate=115200):
 
 
 def send_data(ser, kask):
-    """
-    Retrieve data from ultrasonic sensor and line following module connected to Arduino
-    """
+
     try:
         # Request data
         ser.write(kask.encode())
@@ -32,8 +50,17 @@ def send_data(ser, kask):
         # Wait for a response to reach us from Arduino for two seconds,
         # if a response arrives convert it to a dictionary
     except:
-        print("")
-
+        print("erorsend")
+def read_data(ser):
+    try:
+#         ser.write("R".encode())
+        ser.flushInput()
+        a = ser.readline().decode().strip()
+    except:
+        print("erorread")
+    finally:
+        return a
+        
 
 
 def close(message=""):
@@ -65,8 +92,19 @@ if __name__ == "__main__":
 #     time.sleep(2.5)
 #     send_data(ser, "#1 P1500 #5 P1500 #9 P850 #17 P1500 #21 P1400 #25 P1500 #2 P1500 #6 P1500 #10 P1500 #18 P1500 #22 P1500 #26 P1500 T3000\n\r")
 #     time.sleep(3.5)
-#     send_data(ser, "#25 P1300 T100\n\r")
+#     send_data(ser, "#17 P1300 T1000\n\r")
     while running:
+#         waveflag()
+        laul.Ijustmetyou()
+        
+#         print(read_data(ser))
+#         
+#         send_data(ser, "#17 P1500 T500\n\r")
+#         time.sleep(0.6)
+#         send_data(ser, "#17 P1300 T500\n\r")
+#         time.sleep(0.6)
+#         waveflag()
+
 #         time.sleep(5)
 #         send_data(ser, "#2 P800 #6 P800 #10 P800 #18 P2100 #22 P2100 #26 P2100 T2000\n\r")
 #         time.sleep(2.5)
@@ -89,4 +127,3 @@ if __name__ == "__main__":
             close("Serial is closed!")
 
         # Throttle the loop to about 10 times per second
-        time.sleep(1)

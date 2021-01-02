@@ -15,10 +15,13 @@ void setup() {
 
 void loop() {
   
- myservo.writeMicroseconds(edasi);
+ myservo.writeMicroseconds(1600);
 
-//delay(2000);
+ delay(2000);
 
+ myservo.writeMicroseconds(1400);
+
+ delay(2000);
 
 
 }
