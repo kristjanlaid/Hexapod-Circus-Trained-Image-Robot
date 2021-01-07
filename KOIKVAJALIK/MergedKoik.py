@@ -146,7 +146,27 @@ def tants():
     time.sleep(0.6)
     send_data(ser, "#1 P1300 #5 P1300 #9 P650 #17 P1700 #21 P1600 #25 P1700 T500\n\r")
     send_data(ser, "#2 P1100 #6 P1100 #10 P1100 #18 P1900 #22 P1900 #26 P1900 T500\n\r")
+    time.sleep(2)
+    #teinetants
+    send_data(ser, "#4 P2100 #20 P900 T2000\n\r") #hip
+    time.sleep(2.1)
+    send_data(ser, "#9 P1500 #25 P1100 T2000\n\r")
+    time.sleep(2.1)
+    send_data(ser, "#24 P1100 #8 P1100 T500\n\r")
     time.sleep(0.6)
+    send_data(ser, "#26 P1100 #10 P1900 T500\n\r")
+    time.sleep(0.6)
+    send_data(ser, "#26 P1900 #10 P1100 T500\n\r")
+    time.sleep(0.6)
+    send_data(ser, "#24 P1900 #8 P1900 T500\n\r")
+    time.sleep(0.6)
+    send_data(ser, "#26 P1100 #10 P1900 T500\n\r")
+    time.sleep(0.6)
+    send_data(ser, "#26 P1900 #10 P1100 T500\n\r")
+    time.sleep(0.6)
+    send_data(ser, "#8 P1500 #24 P1500 #16 P1400 #20 P1500 #0 P1500 #4 P1500 T1500\n\r")
+    send_data(ser, "#1 P1150 #5 P1150 #9 P550 #17 P1850 #21 P1750 #25 P1850 T1500\n\r")
+    time.sleep(2)
 def read_data(ser):
     try:
 #         ser.write("R".encode())
@@ -196,12 +216,12 @@ if __name__ == "__main__":
 #     send_data(ser, "#1 P1500 #5 P1500 #9 P850 #17 P1500 #21 P1400 #25 P1500 #2 P1500 #6 P1500 #10 P1500 #18 P1500 #22 P1500 #26 P1500 T3000\n\r")
 #     time.sleep(3.5)
 #     send_data(ser, "#17 P1300 T1000\n\r")
+
+    send_data(ser, "#8 P1500 #24 P1500 #16 P1400 #20 P1500 #0 P1500 #4 P1500\n\r")
+    send_data(ser, "#1 P1300 #5 P1300 #9 P650 #17 P1750 #21 P1600 #25 P1700 T3000\n\r") #keskel seishoiak
+    send_data(ser, "#2 P1100 #6 P1100 #10 P1100 #18 P1900 #22 P1900 #26 P1900 T1000\n\r")
     time.sleep(0.2)
-    send_data(ser, "#1 P1300 #5 P1300 #9 P650 #17 P1700 #21 P1600 #25 P1700 T3000\n\r") #keskel seishoiak
-    time.sleep(0.2)
-    send_data(ser, "#2 P1100 #6 P1100 #10 P1100 #18 P1900 #22 P1900 #26 P1900 T3000\n\r")
-    time.sleep(0.2)
-    send_data(ser, "#8 P1500 #24 P1500 #16 P1400 #20 P1500 #0 P1500 #4 P1500 T3000\n\r")
+
     while running:
         while pildiotsimine == 1:
             ret, frame = cap.read()
@@ -216,11 +236,11 @@ if __name__ == "__main__":
                 print("Tasty dorito")
                 pilt1tegevus = 1
                 pildiotsimine = 0
-            elif exists(grayboy, template2, 0.32, frame) == True:
+            elif exists(grayboy, template2, 0.35, frame) == True:
                 print("Milky way")
                 pilt2tegevus = 1
                 pildiotsimine = 0
-            elif exists(grayboy, template3, 0.4, frame) == True:
+            elif exists(grayboy, template3, 0.3, frame) == True:
                 print("Very sweet")
                 pilt3tegevus = 1
                 pildiotsimine = 0
@@ -261,6 +281,7 @@ if __name__ == "__main__":
                 pilt3tegevus = 0
                 pildiotsimine = 1
             elif pilt4tegevus == 1:
+#                 overloadib
 #                 maatriks.lightshow()
                 pilt4tegevus = 0
                 pildiotsimine = 1
@@ -275,7 +296,7 @@ if __name__ == "__main__":
                 pilt5tegevus = 0
                 pildiotsimine = 1
             elif pilt6tegevus == 1:
-                waveflag()
+#                 laul.Ijustmetyou()
                 pilt6tegevus = 0
                 pildiotsimine = 1
             elif pilt7tegevus == 1:
