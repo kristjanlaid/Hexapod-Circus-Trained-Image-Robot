@@ -277,12 +277,14 @@ if __name__ == "__main__":
                 pilt2tegevus = 0
                 pildiotsimine = 1
             elif pilt3tegevus == 1:
-                laul.Ijustmetyou()
+                #eitunnepiltiara
+#                 laul.Ijustmetyou()
                 pilt3tegevus = 0
                 pildiotsimine = 1
             elif pilt4tegevus == 1:
 #                 overloadib
 #                 maatriks.lightshow()
+                laul.Ijustmetyou()
                 pilt4tegevus = 0
                 pildiotsimine = 1
             elif pilt5tegevus == 1:
